@@ -1,0 +1,84 @@
+newmtl Handle1Mtl
+Material Color
+Ka 0.373615 0.368591 0.383775
+Kd 0.373615 0.368591 0.383775
+Ks 0.0673972 0.0664909 0.0692299 
+
+d 1
+
+Ns 202
+
+map_Ka Handle1_diff.png
+map_Kd Handle1_diff.png
+map_d Handle1_diff.png
+
+newmtl Iy1u71Mtl
+Material Color
+Ka 0.766744 0.334458 0.0477758
+Kd 0.766744 0.334458 0.0477758
+Ks 0.0481094 0.0209856 0.00299769 
+
+d 1
+
+Ns 0
+
+map_Ka Iy1u71_diff.png
+map_Kd Iy1u71_diff.png
+map_d Iy1u71_diff.png
+
+newmtl Handle2Mtl
+Material Color
+Ka 0.373615 0.368591 0.383775
+Kd 0.373615 0.368591 0.383775
+Ks 0.0234425 0.0231273 0.02408 
+
+d 1
+
+Ns 0
+
+map_Ka Handle2_diff.png
+map_Kd Handle2_diff.png
+map_d Handle2_diff.png
+
+newmtl Iy1u72Mtl
+Material Color
+Ka 0.00715504 0.018913 0.0315514
+Kd 0.00715504 0.018913 0.0315514
+Ks 0.000448943 0.0011867 0.0019797 
+
+d 1
+
+Ns 0
+
+map_Ka Iy1u71_diff.png
+map_Kd Iy1u71_diff.png
+map_d Iy1u71_diff.png
+
+newmtl Iy1u73Mtl
+Material Color
+Ka 0.891262 0.899384 0.899384
+Kd 0.891262 0.899384 0.899384
+Ks 0.0559223 0.056432 0.056432 
+
+d 1
+
+Ns 0
+
+map_Ka Iy1u71_diff.png
+map_Kd Iy1u71_diff.png
+map_d Iy1u71_diff.png
+
+newmtl Iy1u76Mtl
+Material Color
+Ka 0.965815 0.547994 0.0677246
+Kd 0.965815 0.547994 0.0677246
+Ks 0.0606001 0.0343839 0.00424939 
+
+d 1
+
+Ns 0
+
+map_Ka Iy1u71_diff.png
+map_Kd Iy1u71_diff.png
+map_d Iy1u71_diff.png
+
