@@ -17,14 +17,14 @@ function applyPortfolioLanguage(language) {
   document.documentElement.lang = language;
 
   const french = language === 'fr';
-  setAllText('#main-navigation a[href="index.html"]', french ? 'Accueil' : 'Homepage');
+  setAllText('#main-navigation a[href^="index.html"]', french ? 'Accueil' : 'Homepage');
   setAllText('#main-navigation a[href="index.html#build"]', french ? 'Créations' : 'Build');
   setAllText('#main-navigation a[href^="build.html"]', french ? 'Créations' : 'Build');
   setAllText('#main-navigation a[href="index.html#contribution"]', 'Commissions');
   setAllText('#main-navigation a[href^="contribution.html"]', 'Commissions');
   setAllText('#main-navigation a[href="index.html#resaux"]', french ? 'Réseaux' : 'Socials');
   setAllText('#main-navigation a[href^="socials.html"]', french ? 'Réseaux' : 'Socials');
-  setAllText('.index-navigation a[href="index.html"]', french ? 'Accueil' : 'Homepage');
+  setAllText('.index-navigation a[href^="index.html"]', french ? 'Accueil' : 'Homepage');
   setAllText('.index-navigation a[href="index.html#build"]', french ? 'Créations' : 'Build');
   setAllText('.index-navigation a[href="index.html#contribution"]', 'Commissions');
   setAllText('.index-navigation a[href="index.html#resaux"]', french ? 'Réseaux' : 'Socials');
