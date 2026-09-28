@@ -253,11 +253,12 @@ body:not(.figma-home){background:#72bee7 url("assets/figma-blue-map.png") center
 /* Center the visible navigation group with equal space on both sides. */
 @media(min-width:761px){
   .index-window>.modern-site-header nav,.payment-shell .site-header nav{
-    display:flex;width:max-content;max-width:calc(100% - 40px);margin-inline:auto;
-    justify-content:center;gap:clamp(24px,4vw,52px);
+    display:grid;width:calc(100% - 64px);max-width:800px;margin-inline:auto;
+    grid-template-columns:repeat(4,minmax(0,1fr)) 92px;
+    align-items:center;justify-items:center;gap:12px;
   }
   .index-window>.modern-site-header a,.payment-shell .site-header a{
-    width:auto;flex:0 0 auto;font-size:19px;white-space:nowrap;
+    width:100%;font-size:19px;line-height:24px;text-align:center;white-space:nowrap;transition:color .16s ease;
   }
 }
 
