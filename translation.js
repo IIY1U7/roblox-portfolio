@@ -132,14 +132,15 @@ function applyPortfolioLanguage(language) {
   setText('.footer-message', french ? 'Construisons quelque chose d’incroyable.' : 'Let’s build something amazing.');
   document.querySelectorAll('.language-toggle [data-lang]').forEach(option => {
     option.classList.toggle('active-language', option.dataset.lang === language);
+    option.setAttribute('aria-pressed', String(option.dataset.lang === language));
   });
 }
 
 applyPortfolioLanguage(portfolioLanguage);
 
-document.querySelectorAll('.language-toggle').forEach(button => {
+document.querySelectorAll('.language-toggle [data-lang]').forEach(button => {
   button.addEventListener('click', () => {
-    const nextLanguage = window.portfolioLanguage === 'fr' ? 'en' : 'fr';
+    const nextLanguage = button.dataset.lang;
     localStorage.setItem('portfolio-language', nextLanguage);
     applyPortfolioLanguage(nextLanguage);
   });

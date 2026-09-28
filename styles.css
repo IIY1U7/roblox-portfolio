@@ -260,7 +260,11 @@ body:not(.figma-home){background:#72bee7 url("assets/figma-blue-map.png") center
     width:auto;flex:0 0 auto;font-size:19px;white-space:nowrap;
   }
 }
-.language-toggle{display:inline-flex;align-items:center;justify-content:center;gap:4px}
-.language-toggle [data-lang]{display:inline-flex;align-items:center;padding:2px;opacity:.55}
-.language-toggle [data-lang].active-language{opacity:1;outline:1px solid #153959;text-shadow:none}
-.language-toggle svg{display:block}
+
+.language-toggle{display:inline-flex;align-items:center;justify-content:center;gap:4px;padding:0;border:0;background:none;box-shadow:none}
+.language-toggle:hover,.language-toggle:active{background:none;box-shadow:none}
+.language-toggle [data-lang]{display:flex;align-items:center;justify-content:center;width:44px;height:34px;padding:5px;border:2px solid #06121c;background:linear-gradient(#45d9ff,#0873e7);box-shadow:inset 2px 2px rgba(255,255,255,.35),inset -2px -2px rgba(0,31,124,.46);opacity:1;cursor:pointer}
+.language-toggle [data-lang].active-language{background:linear-gradient(#a1f1ff,#48bfff);outline:none;text-shadow:none}
+.language-toggle [data-lang]:hover{filter:brightness(1.08)}
+.language-toggle [data-lang]:focus-visible{outline:2px solid white;outline-offset:2px}
+.language-toggle svg{display:block;flex-shrink:0}
