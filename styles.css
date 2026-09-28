@@ -140,7 +140,7 @@ body:not(.figma-home){background:#72bee7 url("assets/figma-blue-map.png") center
   .index-window>.modern-site-header nav,
   .payment-shell .site-header nav{
     display:grid;
-    grid-template-columns:repeat(5,minmax(0,1fr)) 74px;
+    grid-template-columns:repeat(4,minmax(0,1fr)) 90px;
     align-items:center;
     justify-items:center;
     gap:0;
@@ -149,6 +149,7 @@ body:not(.figma-home){background:#72bee7 url("assets/figma-blue-map.png") center
   .payment-shell .site-header a{
     width:100%;
     text-align:center;
+    font-size:19px;
   }
 }
 .payment-page{color:#fff;text-shadow:0 2px 2px #00172b}
