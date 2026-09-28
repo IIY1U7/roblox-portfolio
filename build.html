@@ -8,17 +8,16 @@
   <meta http-equiv="Expires" content="0">
   <meta name="description" content="IY1U7 Roblox builds and assets">
   <title>Build — Roblox Portfolio</title>
-  <script src="payment-enhancements.js?v=20260816-23"></script>
-  <link rel="stylesheet" href="styles.css?v=20260817-39">
-  <script src="translation.js?v=20260816-39" defer></script>
-  <script src="script.js?v=20260817-37" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260928-1">
+  <script src="translation.js?v=20260928-1" defer></script>
+  <script src="script.js?v=20260928-1" defer></script>
 </head>
 <body>
   <div class="page-shell payment-shell build-shell">
     <header class="site-header">
       <button class="menu-button" aria-expanded="false" aria-controls="main-navigation">Menu</button>
       <nav id="main-navigation" aria-label="Main navigation">
-        <a href="index.html">Homepage</a><a class="active" href="build.html">Build</a><a href="contribution.html">Commissions</a><a href="socials.html">Socials</a><a href="payement.html">Payment</a><button class="language-toggle notranslate" translate="no" type="button" aria-label="Switch between French and English"><span data-lang="fr">FR</span><i>/</i><span data-lang="en">ENG</span></button>
+        <a href="index.html">Homepage</a><a class="active" href="build.html">Build</a><a href="contribution.html">Commissions</a><a href="socials.html">Socials</a><button class="language-toggle notranslate" translate="no" type="button" aria-label="Switch between French and English"><span data-lang="fr">FR</span><i>/</i><span data-lang="en">ENG</span></button>
       </nav>
     </header>
 
@@ -30,6 +29,12 @@
 
       <p class="build-introduction">Here you can explore all my Roblox creations and assets.</p>
 
+      <div class="build-tabs" role="tablist" aria-label="Build">
+        <button class="active" id="asset-tab" type="button" role="tab" aria-selected="true" aria-controls="asset-panel" data-build-tab="asset">Asset</button>
+        <button id="map-tab" type="button" role="tab" aria-selected="false" aria-controls="map-panel" tabindex="-1" data-build-tab="map">Map</button>
+      </div>
+
+      <div id="asset-panel" role="tabpanel" aria-labelledby="asset-tab">
       <div class="build-filter-carousel" data-build-filter-carousel>
         <button class="build-filter-arrow" type="button" data-build-filter-prev aria-label="Previous categories">&#10094;</button>
         <div class="build-filters" aria-label="Build categories">
@@ -76,6 +81,10 @@
         <article class="build-card" data-build-category="other"><div class="build-preview"><img src="assets/build-boombox.png?v=20260816-39" alt="BoomBox built with Roblox studs" draggable="false"></div><h2>BoomBox</h2><span class="build-tag">ANOTHER</span></article>
       </section>
       <p class="build-empty" hidden>No creation in this category yet.</p>
+      </div>
+      <section id="map-panel" class="map-grid" role="tabpanel" aria-labelledby="map-tab" hidden>
+        <!-- Add map/game videos here using <video controls preload="metadata" playsinline>. -->
+      </section>
     </main>
   </div>
 

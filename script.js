@@ -15,72 +15,6 @@ navigation.querySelectorAll('a').forEach(link => {
   });
 });
 
-const products = [
-  [20000, '1940245813'], [10000, '1940881826'], [9500, '1947417367'],
-  [9000, '1944282455'], [8500, '1951305288'], [8000, '1944528441'],
-  [7500, '1947897369'], [7000, '1943671830'], [6500, '1951125292'],
-  [6000, '1940581889'], [5500, '1948857370'], [5000, '1943689799'],
-  [4500, '1944870523'], [4000, '1940095813'], [3500, '1944432772'],
-  [3000, '1938214160'], [2500, '1944630736'], [2000, '1942129747'],
-  [1500, '1944432430'], [1000, '1940851805'], [900, '1944642434'],
-  [800, '1944258476'], [700, '1941745851'], [600, '1940227805'],
-  [500, '1940329805'], [400, '1941643864'], [300, '1940917840'],
-  [200, '1940011842'], [100, '1940305870'],
-  [75, '1944426804'], [50, '1944042823'], [25, '1940726245']
-];
-
-function findProducts(total) {
-  const selection = [];
-  let remaining = total;
-  products.forEach(product => {
-    while (remaining >= product[0]) {
-      selection.push(product);
-      remaining -= product[0];
-    }
-  });
-  return remaining === 0 ? selection : null;
-}
-
-const amountForm = document.querySelector('#amount-form');
-const result = document.querySelector('#calculation-result');
-
-if (amountForm) {
-  amountForm.addEventListener('submit', event => {
-    event.preventDefault();
-    const french = window.portfolioLanguage === 'fr';
-    const amount = Number(document.querySelector('#robux-amount').value);
-    if (!Number.isInteger(amount) || amount < 100 || amount % 100 !== 0) {
-      result.innerHTML = `<p class="result-error">${french ? 'Choisissez un montant d’au moins 100, par tranche de 100 Robux.' : 'Choose an amount of at least 100, in increments of 100 Robux.'}</p>`;
-      return;
-    }
-    const selection = findProducts(amount);
-    if (!selection) {
-      result.innerHTML = `<p class="result-error">${french ? 'Ce montant ne peut pas être composé avec les Developer Products disponibles.' : 'This amount cannot be created with the available Developer Products.'}</p>`;
-      return;
-    }
-    const cards = selection.map(product => `<div class="product-card" data-product-id="${product[1]}"><b>${product[0].toLocaleString()} Robux</b></div>`).join('');
-    result.innerHTML = `<div class="result-links">${cards}</div>`;
-    result.querySelectorAll('.product-card').forEach(card => {
-      card.addEventListener('click', () => {
-        window.open(`https://www.roblox.com/game-pass/${card.dataset.productId}/robux`, '_blank', 'noopener');
-      });
-    });
-  });
-}
-
-document.querySelectorAll('[data-payment-tab]').forEach(button => {
-  button.addEventListener('click', () => {
-    document.querySelectorAll('[data-payment-tab]').forEach(tab => {
-      const active = tab === button;
-      tab.classList.toggle('active', active);
-      tab.setAttribute('aria-selected', String(active));
-    });
-    document.querySelectorAll('.payment-panel').forEach(panel => {
-      panel.hidden = panel.id !== `panel-${button.dataset.paymentTab}`;
-    });
-  });
-});
-
 document.querySelectorAll('[data-copy]').forEach(button => {
   button.addEventListener('click', async () => {
     const value = button.dataset.copy;
@@ -192,3 +126,30 @@ if (bouncingParts.length && !window.matchMedia('(prefers-reduced-motion: reduce)
   };
   requestAnimationFrame(moveParts);
 }
+
+const buildTabs = [...document.querySelectorAll('[data-build-tab]')];
+function selectBuildTab(tab) {
+  buildTabs.forEach(button => {
+    const selected = button === tab;
+    button.classList.toggle('active', selected);
+    button.setAttribute('aria-selected', String(selected));
+    button.tabIndex = selected ? 0 : -1;
+    const panel = document.getElementById(button.getAttribute('aria-controls'));
+    panel.hidden = !selected;
+    if (!selected) panel.querySelectorAll('video').forEach(video => video.pause());
+  });
+}
+buildTabs.forEach((tab, index) => {
+  tab.addEventListener('click', () => selectBuildTab(tab));
+  tab.addEventListener('keydown', event => {
+    let nextIndex;
+    if (event.key === 'ArrowRight') nextIndex = (index + 1) % buildTabs.length;
+    else if (event.key === 'ArrowLeft') nextIndex = (index - 1 + buildTabs.length) % buildTabs.length;
+    else if (event.key === 'Home') nextIndex = 0;
+    else if (event.key === 'End') nextIndex = buildTabs.length - 1;
+    else return;
+    event.preventDefault();
+    selectBuildTab(buildTabs[nextIndex]);
+    buildTabs[nextIndex].focus();
+  });
+});

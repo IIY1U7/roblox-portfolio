@@ -238,3 +238,13 @@ body:not(.figma-home){background:#72bee7 url("assets/figma-blue-map.png") center
 @media(max-width:520px){.build-filters{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){.contribution-page{padding:28px 16px 44px}.project-grid{grid-template-columns:1fr}.project-card h2{font-size:21px}}
 @media(max-width:760px){.payment-shell{height:auto;min-height:0}.payment-shell .site-header{overflow:visible}.payment-shell .site-header nav{background:linear-gradient(#22baff,#086cde);border:3px solid #06121c}}
+
+/* Asset and Map sections share the existing blue button style. */
+.build-tabs{display:flex;gap:12px;margin:0 0 22px}
+.build-tabs button{flex:1;min-width:0;min-height:50px;border:3px solid #06121c;background:rgba(154,205,230,.22);color:#fff;font:inherit;font-weight:700;cursor:pointer}
+.build-tabs button:hover,.build-tabs button.active{background:linear-gradient(#45d9ff,#0873e7)}
+.build-tabs button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+[role="tabpanel"][hidden]{display:none}
+.map-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;min-height:160px}
+.map-grid video{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#06121c;border:3px solid #06121c}
+@media(max-width:760px){.map-grid{grid-template-columns:1fr}}

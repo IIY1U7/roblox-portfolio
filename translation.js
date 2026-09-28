@@ -24,12 +24,10 @@ function applyPortfolioLanguage(language) {
   setAllText('#main-navigation a[href^="contribution.html"]', 'Commissions');
   setAllText('#main-navigation a[href="index.html#resaux"]', french ? 'Réseaux' : 'Socials');
   setAllText('#main-navigation a[href^="socials.html"]', french ? 'Réseaux' : 'Socials');
-  setAllText('#main-navigation a[href^="payement.html"]', french ? 'Paiement' : 'Payment');
   setAllText('.index-navigation a[href="index.html"]', french ? 'Accueil' : 'Homepage');
   setAllText('.index-navigation a[href="index.html#build"]', french ? 'Créations' : 'Build');
   setAllText('.index-navigation a[href="index.html#contribution"]', 'Commissions');
   setAllText('.index-navigation a[href="index.html#resaux"]', french ? 'Réseaux' : 'Socials');
-  setAllText('.index-navigation a[href^="payement.html"]', french ? 'Paiement' : 'Payment');
   setText('.index-eyebrow', 'STUD BUILDER');
   setText('.index-intro h2', french ? 'Bienvenue sur mon portfolio' : 'Welcome to my portfolio');
   setText('.index-description', french
@@ -122,27 +120,7 @@ function applyPortfolioLanguage(language) {
       button.innerHTML = `${french ? 'VOIR' : 'VIEW'} <span>›</span>`;
     });
     setText('.build-empty', french ? 'Aucune création dans cette catégorie pour le moment.' : 'No creation in this category yet.');
-  } else {
-    setText('.payment-heading p', french ? 'PAIEMENT / COMMISSION' : 'PAYMENT / COMMISSION');
-    setText('.payment-heading h1', french ? 'Paiement' : 'Payment');
   }
-  setText('.method-step h2', french ? '1.  Sélectionnez un moyen de paiement :' : '1.  Select payment method:');
-  setAllText('.payment-method.coming small', french ? 'bientôt' : 'soon');
-  setText('.amount-step h2', french ? '2.  Entrez le montant de Robux :' : '2.  Enter amount of Robux:');
-
-  const paypalDescription = document.querySelector('#panel-paypal .step-description');
-  if (paypalDescription) paypalDescription.textContent = french
-    ? 'Cette méthode pourra être activée dès que votre lien PayPal sera ajouté.'
-    : 'This method can be enabled once your PayPal link has been added.';
-
-  setText('label[for="robux-amount"]', french ? 'Montant en Robux' : 'Robux amount');
-  const amountInput = document.querySelector('#robux-amount');
-  if (amountInput) amountInput.placeholder = french ? 'Exemple : 4500' : 'Example: 4500';
-  const searchButton = document.querySelector('.search-button');
-  if (searchButton) searchButton.setAttribute('aria-label', french ? 'Rechercher' : 'Search');
-  setText('.search-button .visually-hidden', french ? 'Rechercher' : 'Search');
-  setText('#panel-paypal h2', french ? '2.  Payer avec PayPal :' : '2.  Pay with PayPal:');
-  setText('.paypal-link', french ? 'PayPal — bientôt disponible' : 'PayPal — coming soon');
   setText('.socials-introduction', french ? 'Retrouvez ici mes réseaux et les différentes façons de me contacter !' : 'Here you can find my socials and ways to contact me!');
   setText('.copy-discord', french ? 'COPIER LE PSEUDO' : 'COPY USERNAME');
   setText('.social-card:nth-of-type(1) small', french ? 'Vous pouvez m’ajouter sur Discord !' : 'You can add me on Discord!');
