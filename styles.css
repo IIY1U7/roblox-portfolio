@@ -269,3 +269,5 @@ body:not(.figma-home){background:#72bee7 url("assets/figma-blue-map.png") center
 .language-toggle [data-lang]:hover{filter:brightness(1.08)}
 .language-toggle [data-lang]:focus-visible{outline:2px solid white;outline-offset:2px}
 .language-toggle svg{display:block;flex-shrink:0}
+
+.map-grid > video:only-child{grid-column:1/-1}
